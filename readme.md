@@ -1,7 +1,7 @@
 
 # PS-Ruby
 
-PS-Ruby is a simple ps wrapper with ruby. You can see (example.rb)[example.rb] to learn more...
+PS-Ruby is a simple ps wrapper with ruby. You can see [example.rb](example.rb) to learn more...
 
 # installation
 

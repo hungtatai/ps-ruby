@@ -3,12 +3,18 @@
 
 PS-Ruby is a simple ps wrapper with ruby. You can see (example.rb)[example.rb] to learn more...
 
-# Usage
+# installation
 
+```
+  gem install ps-ruby
+```
+
+# Usage
 
 Display all processes
 
 ```
+  > require 'ps-ruby'
   > PS.simple_display
 ```
 

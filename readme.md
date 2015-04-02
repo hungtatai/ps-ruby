@@ -13,7 +13,7 @@ PS-Ruby is a simple ps wrapper with ruby. You can see [example.rb](example.rb) t
 
 Display all processes
 
-```
+```ruby
   > require 'ps-ruby'
   > PS.simple_display
 ```
@@ -29,13 +29,13 @@ Display all processes
 
 Display special process by name
 
-```
+```ruby
   > PS.simple_display("zsh")
 ```
 
 or 
 
-```
+```ruby
   > PS.simple_display(/.*zsh.*/i)
 ```
 
@@ -49,11 +49,11 @@ or
 Get special process by name
 
 
-```
+```ruby
   > PS.find_process("zsh")
 ```
 
-```
+```ruby
   [{
     "USER" => "HondaDai", 
     "PID" => "59395", 

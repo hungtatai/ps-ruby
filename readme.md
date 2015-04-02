@@ -54,7 +54,43 @@ Get special process by name
 ```
 
 ```
-  [{"USER"=>"HondaDai", "PID"=>"59395", "%CPU"=>"0.4", "%MEM"=>"0.0", "VSZ"=>"2462760", "RSS"=>"3308", "TT"=>"s002", "STAT"=>"S", "STARTED"=>"2:21PM", "TIME"=>"0:00.75", "COMMAND"=>"-zsh"}, {"USER"=>"HondaDai", "PID"=>"83005", "%CPU"=>"0.0", "%MEM"=>"0.0", "VSZ"=>"2462760", "RSS"=>"776", "TT"=>"s001", "STAT"=>"S+", "STARTED"=>"10:10PM", "TIME"=>"0:01.07", "COMMAND"=>"-zsh"}, {"USER"=>"HondaDai", "PID"=>"67468", "%CPU"=>"0.0", "%MEM"=>"0.0", "VSZ"=>"2462760", "RSS"=>"196", "TT"=>"s000", "STAT"=>"S", "STARTED"=>"Fri03PM", "TIME"=>"0:00.78", "COMMAND"=>"-zsh"}]
+  [{
+    "USER" => "HondaDai", 
+    "PID" => "59395", 
+    "%CPU" => "0.4", 
+    "%MEM" => "0.0", 
+    "VSZ" => "2462760", 
+    "RSS" => "3308", 
+    "TT" => "s002", 
+    "STAT" => "S", 
+    "STARTED" => "2:21PM", 
+    "TIME" => "0:00.75", 
+    "COMMAND" => "-zsh"
+  }, {
+    "USER" => "HondaDai", 
+    "PID" => "83005", 
+    "%CPU" => "0.0", 
+    "%MEM" => "0.0", 
+    "VSZ" => "2462760", 
+    "RSS" => "776", 
+    "TT" => "s001", 
+    "STAT" => "S+", 
+    "STARTED" => "10:10PM", 
+    "TIME" => "0:01.07", 
+    "COMMAND" => "-zsh"
+  }, {
+    "USER" => "HondaDai", 
+    "PID" => "67468", 
+    "%CPU" => "0.0", 
+    "%MEM" => "0.0", 
+    "VSZ" => "2462760", 
+    "RSS" => "196", 
+    "TT" => "s000", 
+    "STAT" => "S", 
+    "STARTED" => "Fri03PM", 
+    "TIME" => "0:00.78", 
+    "COMMAND" => "-zsh"
+  }]
 ```
 
 Get all processes
@@ -63,4 +99,4 @@ Get all processes
   > PS.processes
 ```
 
-omited
+omitted

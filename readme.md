@@ -11,7 +11,7 @@ PS-Ruby is a simple ps wrapper with ruby. You can see [example.rb](example/examp
 
 # Usage
 
-Display all processes
+## Display all processes
 
 ```ruby
   > require 'ps-ruby'
@@ -27,7 +27,7 @@ Display all processes
   ...
 ```
 
-Display special process by name
+## Display special process by name
 
 ```ruby
   > PS.simple_display("zsh")
@@ -52,7 +52,7 @@ or
   83005 0.0   0.0   -zsh
 ```
 
-Get special process by name
+## Get special process by name
 
 
 ```ruby
@@ -99,7 +99,7 @@ Get special process by name
   }]
 ```
 
-Chaining
+## Chaining
 
 ```ruby
   > PS.find_process("zsh").find_process_by("PID", "67468")
@@ -121,7 +121,7 @@ Chaining
   }]
 ```
 
-Kill process
+## Kill process
 
 ```ruby
   > PS.find_process("chrome").kill! # kill all processes named '.*chrome.*'
@@ -135,17 +135,15 @@ or
 ```
 
 
-Check process alive
+## Check process alive
 
 ```ruby
   > chrome = PS.find_process("chrome")[0]
   > chrome.alive?
 ```
 
-Get all processes
+## Get all processes
 
 ```ruby
   > PS.get_all_processes
 ```
-
-omitted

@@ -39,6 +39,12 @@ or
   > PS.simple_display(/.*zsh.*/i)
 ```
 
+or 
+
+```ruby
+  PS.find_process("zsh").simple_display
+```
+
 ```
   PID   %CPU  %MEM  COMMAND
   59395 0.4   0.0   -zsh
@@ -93,10 +99,51 @@ Get special process by name
   }]
 ```
 
+```ruby
+  > PS.find_process("zsh").find_process_by("PID", "67468")
+```
+
+```
+  [{
+    "USER" => "HondaDai", 
+    "PID" => "67468", 
+    "%CPU" => "0.0", 
+    "%MEM" => "0.0", 
+    "VSZ" => "2462760", 
+    "RSS" => "196", 
+    "TT" => "s000", 
+    "STAT" => "S", 
+    "STARTED" => "Fri03PM", 
+    "TIME" => "0:00.78", 
+    "COMMAND" => "-zsh"
+  }]
+```
+
+Kill process
+
+```ruby
+  > PS.find_process("chrome").kill! # kill all processes named '.*chrome.*'
+```
+
+or 
+
+```ruby
+  > chrome = PS.find_process("chrome")[0]
+  > chrome.kill!
+```
+
+
+Check process alive
+
+```ruby
+  > chrome = PS.find_process("chrome")[0]
+  > chrome.alive?
+```
+
 Get all processes
 
 ```ruby
-  > PS.processes
+  > PS.get_all_processes
 ```
 
 omitted

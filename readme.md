@@ -99,6 +99,8 @@ Get special process by name
   }]
 ```
 
+Chaining
+
 ```ruby
   > PS.find_process("zsh").find_process_by("PID", "67468")
 ```

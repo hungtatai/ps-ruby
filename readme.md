@@ -121,6 +121,12 @@ or
   }]
 ```
 
+```
+  ms = PS.find_process("Microsoft")
+  word = ms.find_process("Word")
+  ppt = ms.find_process("PowerPoint")
+```
+
 ## Kill process
 
 ```ruby

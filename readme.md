@@ -135,7 +135,7 @@ or
 ```
 
 
-## Check process alive
+## Check a process alive or not
 
 ```ruby
   > chrome = PS.find_process("chrome")[0]

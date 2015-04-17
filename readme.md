@@ -27,7 +27,7 @@ PS-Ruby is a simple ps wrapper with ruby. You can see [example.rb](example/examp
   ...
 ```
 
-## Display special process by name
+## Display special processes by name
 
 ```ruby
   > PS.simple_display("zsh")
@@ -42,7 +42,7 @@ or
 or 
 
 ```ruby
-  PS.find_process("zsh").simple_display
+  PS.find_processes("zsh").simple_display
 ```
 
 ```
@@ -52,11 +52,11 @@ or
   83005 0.0   0.0   -zsh
 ```
 
-## Get special process by name
+## Get special processes by name
 
 
 ```ruby
-  > PS.find_process("zsh")
+  > PS.find_processes("zsh")
 ```
 
 ```ruby
@@ -102,10 +102,10 @@ or
 ## Chaining
 
 ```ruby
-  > PS.find_process("zsh").find_process_by("PID", "67468")
+  > PS.find_processes("zsh").find_process_by("PID", "67468")
 ```
 
-```
+```ruby
   [{
     "USER" => "HondaDai", 
     "PID" => "67468", 
@@ -121,22 +121,28 @@ or
   }]
 ```
 
+```ruby
+  ms = PS.find_processes("Microsoft")
+  word = ms.find_processes("Word")
+  ppt = ms.find_processes("PowerPoint")
 ```
-  ms = PS.find_process("Microsoft")
-  word = ms.find_process("Word")
-  ppt = ms.find_process("PowerPoint")
+
+## Get special attribute
+
+```ruby
+  commands = PS.find_processes("Microsoft").pick_by_attr("COMMAND")
 ```
 
 ## Kill process
 
 ```ruby
-  > PS.find_process("chrome").kill! # kill all processes named '.*chrome.*'
+  > PS.find_processes("chrome").kill! # kill all processes named '.*chrome.*'
 ```
 
 or 
 
 ```ruby
-  > chrome = PS.find_process("chrome")[0]
+  > chrome = PS.find_processes("chrome")[0]
   > chrome.kill!
 ```
 
@@ -144,7 +150,7 @@ or
 ## Check a process alive or not
 
 ```ruby
-  > chrome = PS.find_process("chrome")[0]
+  > chrome = PS.find_processes("chrome")[0]
   > chrome.alive?
 ```
 

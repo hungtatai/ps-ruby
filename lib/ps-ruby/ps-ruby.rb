@@ -34,11 +34,11 @@ class PsProcessList < Array
     nil
   end
 
-  def find_process(name)
-    find_process_by("COMMAND", name)
+  def find_processes(name)
+    find_processes_by("COMMAND", name)
   end
 
-  def find_process_by(attr_name, value)
+  def find_processes_by(attr_name, value)
     regex = if value.class != Regexp then Regexp.new(".*#{value}.*", Regexp::IGNORECASE) else value end
     PsProcessList.new(self.select{|x| x[attr_name] =~ regex })
   end
@@ -56,15 +56,15 @@ module PS
   module_function
 
   def simple_display(name = "", limit_process_name_len=30)
-    find_process(name).simple_display(limit_process_name_len)
+    find_processes(name).simple_display(limit_process_name_len)
   end
 
-  def find_process(name)
-    find_process_by("COMMAND", name)
+  def find_processes(name)
+    find_processes_by("COMMAND", name)
   end
 
-  def find_process_by(attr_name, value)
-    get_all_processes.find_process_by(attr_name, value)
+  def find_processes_by(attr_name, value)
+    get_all_processes.find_processes_by(attr_name, value)
   end
 
   def attrs

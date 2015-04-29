@@ -6,7 +6,7 @@ class PsProcess < Hash
   end
 
   def alive?
-    PS.get_all_processes.pick_by_attr("PID").include?(self["PID"])
+    PS.get_all_processes.pick_attr("PID").include?(self["PID"])
   end
 end
 
@@ -43,7 +43,7 @@ class PsProcessList < Array
     PsProcessList.new(self.select{|x| x[attr_name] =~ regex })
   end
 
-  def pick_by_attr(attr_name)
+  def pick_attr(attr_name)
     self.map{|x| x[attr_name] } if PS.attrs.include?(attr_name)
   end
 
@@ -76,10 +76,12 @@ module PS
   def get_all_processes
     table = raw_aux.split("\n").map{|x| x.split(/\s+/) }
     attrs =  table.shift
+    is_percent = ["%CPU", "%MEM"].map{|x| attrs.index(x) }
     table = table.reduce(PsProcessList.new) {|s, x|
       if x.size > attrs.size
         x = x[0..(attrs.size-2)] + [x[(attrs.size-1)..-1].join(" ")]
       end
+      is_percent.each{|k| x[k] = x[k].to_f }
       s << PsProcess[attrs.zip(x)]
     }
     table

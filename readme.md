@@ -130,7 +130,7 @@ or
 ## Get special attribute
 
 ```ruby
-  commands = PS.find_processes("Microsoft").pick_by_attr("COMMAND")
+  commands = PS.find_processes("Microsoft").pick_attr("COMMAND")
 ```
 
 ## Kill process

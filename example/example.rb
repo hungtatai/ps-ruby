@@ -7,9 +7,6 @@ puts PS.attrs.to_s
 # display a simple table
 PS.find_processes("zsh").simple_display
 
-# find by special attrs
-put PS.find_processes("PID", PROCESS_ID)
-
 # Kill all process named 'irb'
 # PS.find_processes("irb").kill!
 
@@ -20,3 +17,6 @@ PS.find_processes("chrome").first.alive?
 ms = PS.find_processes("Microsoft")
 word = ms.find_processes("Word")
 ppt = ms.find_processes("PowerPoint")
+
+# find by special attrs
+put PS.find_processes("PID", PROCESS_ID)
